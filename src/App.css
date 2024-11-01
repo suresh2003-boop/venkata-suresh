@@ -1,0 +1,272 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base styling for the navigation bar */
+.navbar {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for individual button-like navigation links */
+.nav-button {
+  color: white;
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 35px;  /* Rounded corners */
+  
+  border: 20px; /* Remove border */
+  display: inline-block;
+  cursor: pointer;  /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+
+/* Hover effect with color change and scaling */
+.nav-button:hover {
+  background-color: #028a56;  /* Darker green on hover */
+  color: #ffffff;
+  transform: translateY(-2px);  /* Button rises slightly */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+/* Active button effect */
+.nav-button:active {
+  background-color: #026b42;  /* Even darker green when clicked */
+  transform: translateY(0);    /* Button moves back to original position */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Smaller shadow when pressed */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack buttons vertically */
+    padding: 20px;
+  }
+  .nav-button {
+    font-size: 16px; /* Adjust font size for mobile */
+    padding: 10px 20px;
+    margin: 8px 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for the Veg component container */
+.veg-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the header */
+.veg-header {
+  font-size: 1.8em;
+  color: #388e3c;
+  text-align: center;
+  border-bottom: 2px solid #388e3c;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Style for product list */
+.veg-product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style for each product item */
+.veg-product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1em;
+}
+
+.veg-product-item:last-child {
+  border-bottom: none;
+}
+
+/* Style for product name and price */
+.product-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-price {
+  color: #007bff;
+}
+
+/* Style for the "Add to Cart" button */
+.add-to-cart-button {
+  padding: 5px 10px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #2e7d32;
+}
+
+
+
+
+
+/* Style for the NonVeg component container */
+.nonveg-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff6f6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the header */
+.nonveg-header {
+  font-size: 1.8em;
+  color: #d32f2f;
+  text-align: center;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Style for product list */
+.nonveg-product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style for each product item */
+.nonveg-product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1em;
+}
+
+.nonveg-product-item:last-child {
+  border-bottom: none;
+}
+
+/* Style for product name and price */
+.product-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-price {
+  color: #d32f2f;
+}
+
+/* Style for the "Add to Cart" button */
+.add-to-cart-button {
+  padding: 5px 10px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #b71c1c;
+}
+
+
+
+
+
+
