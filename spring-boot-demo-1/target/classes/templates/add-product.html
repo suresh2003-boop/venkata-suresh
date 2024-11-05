@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f9fc;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-control {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #f8f9fa;
+        }
+
+        .form-control:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+        }
+
+        .form-control::placeholder {
+            color: #6c757d;
+            opacity: 0.8;
+        }
+
+        .text-danger {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .footer-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer-link a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+    <title>Product Form</title>
+</head>
+<body>
+    <div class="form-container" th:fragment="content">
+        <h2>Product Information</h2>
+        <form th:action="@{/productform}" method="post" th:object="${productModel}">
+            <div class="form-group">
+                <label for="proName">Product Name</label>
+                <input type="text" class="form-control" id="proName" th:field="*{proName}" placeholder="Enter product name">
+                <div th:if="${#fields.hasErrors('proName')}" class="text-danger" th:errors="*{proName}">Invalid product name</div>
+            </div>
+            <div class="form-group">
+                <label for="proBrand">Brand</label>
+                <input type="text" class="form-control" id="proBrand" th:field="*{proBrand}" placeholder="Enter brand name">
+                <div th:if="${#fields.hasErrors('proBrand')}" class="text-danger" th:errors="*{proBrand}">Invalid brand name</div>
+            </div>
+            <div class="form-group">
+                <label for="proPrice">Price</label>
+                <input type="number" class="form-control" id="proPrice" th:field="*{proPrice}" placeholder="Enter price">
+                <div th:if="${#fields.hasErrors('proPrice')}" class="text-danger" th:errors="*{proPrice}">Invalid price</div>
+            </div>
+            <div class="form-group">
+                <label for="proDescription">Description</label>
+                <textarea class="form-control" id="proDescription" th:field="*{proDescription}" rows="4" placeholder="Enter product description"></textarea>
+                <div th:if="${#fields.hasErrors('proDescription')}" class="text-danger" th:errors="*{proDescription}">Invalid description</div>
+            </div>
+            <div class="form-group">
+                <label for="proCategory">Category</label>
+                <select class="form-control" id="proCategory" th:field="*{proCategory}">
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="TV">TV</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Camera">Camera</option>
+                    <option value="Soap">Soap</option>
+                </select>
+                <div th:if="${#fields.hasErrors('proCategory')}" class="text-danger" th:errors="*{proCategory}">Invalid category</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="footer-link">
+            <p>Need help? <a href="/contact">Contact Us</a></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0-alpha1/js/bootstrap.min.js"></script>
+</body>
+</html>
